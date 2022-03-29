@@ -17,12 +17,8 @@ try {
 
     // Set webhook
     $result = $telegram->setWebhook($hook_url,['certificate' => '/etc/ssl/certs/apache-selfsigned.crt']);
-    if ($result->isOk()) {
-        echo 'ok';
-        echo $result->getDescription();
-    } else {
-        echo 'error';
-    }
+
+    echo \Longman\TelegramBot\Request::getInput();
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     echo $e;
     // log telegram errors
