@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_startup_errors', 1);
+ini_set('display_errors', '1');
 // Load composer
 require __DIR__ . '/vendor/autoload.php';
 
@@ -15,6 +18,7 @@ try {
     // Set webhook
     $result = $telegram->setWebhook($hook_url,['certificate' => '/etc/apache2/sites-available/default-ssl.conf']);
     if ($result->isOk()) {
+        echo 'ok';
         echo $result->getDescription();
     } else {
         echo 'error';
