@@ -17,8 +17,10 @@ try {
 
     // Set webhook
     $result = $telegram->setWebhook($hook_url,['certificate' => '/etc/ssl/certs/apache-selfsigned.crt']);
-
-    echo \Longman\TelegramBot\Request::getInput();
+Longman\TelegramBot\Request::sendMessage([
+    'text'    => 'Your utf8 text 😜 ...',
+]);
+    //echo \Longman\TelegramBot\Request::getInput();
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     echo $e;
     // log telegram errors
