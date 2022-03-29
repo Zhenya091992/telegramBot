@@ -16,11 +16,10 @@ try {
     $telegram = new Longman\TelegramBot\Telegram($bot_api_key, $bot_usernameexplanation);
 
     // Set webhook
-    $result = $telegram->setWebhook($hook_url,['certificate' => '/etc/ssl/certs/apache-selfsigned.crt']);
-Longman\TelegramBot\Request::sendMessage([
-    'text'    => 'Your utf8 text 😜 ...',
-]);
-    //echo \Longman\TelegramBot\Request::getInput();
+    $telegram->setWebhook($hook_url,['certificate' => '/etc/ssl/certs/apache-selfsigned.crt']);
+    $command = new \Longman\TelegramBot\Commands\SystemCommands\StartCommand($telegram);
+    $command->replyToChat('sfwefwefwef');
+
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     echo $e;
     // log telegram errors
