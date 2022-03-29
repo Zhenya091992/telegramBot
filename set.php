@@ -16,6 +16,8 @@ try {
     $result = $telegram->setWebhook($hook_url,['certificate' => '/etc/apache2/sites-available/default-ssl.conf']);
     if ($result->isOk()) {
         echo $result->getDescription();
+    } else {
+        echo 'error';
     }
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     // log telegram errors
