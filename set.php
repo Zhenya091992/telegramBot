@@ -16,7 +16,7 @@ try {
     $telegram = new Longman\TelegramBot\Telegram($bot_api_key, $bot_usernameexplanation);
 
     // Set webhook
-    $result = $telegram->setWebhook($hook_url,['certificate' => '/etc/apache2/sites-available/default-ssl.conf']);
+    $result = $telegram->setWebhook($hook_url,['certificate' => '/etc/ssl/certs/apache-selfsigned.crt']);
     if ($result->isOk()) {
         echo 'ok';
         echo $result->getDescription();
