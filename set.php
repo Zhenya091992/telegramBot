@@ -17,7 +17,7 @@ try {
 
     // Set webhook
     $telegram->setWebhook($hook_url,['certificate' => '/etc/ssl/certs/apache-selfsigned.crt']);
-    $command = new \Longman\TelegramBot\Commands\SystemCommands\StartCommand($telegram);
+    $command = new \Longman\TelegramBot\Commands\UserCommands\StartCommand($telegram);
     $command->replyToChat('sfwefwefwef');
 
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
