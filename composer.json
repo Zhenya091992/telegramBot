@@ -1,5 +1,6 @@
 {
   "require": {
-    "longman/telegram-bot": "*"
+    "longman/telegram-bot": "*",
+    "laravel/laravel": "*"
   }
 }

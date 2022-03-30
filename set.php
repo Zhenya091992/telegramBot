@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Log;
+
 error_reporting(E_ALL);
 ini_set('display_startup_errors', 1);
 ini_set('display_errors', '1');
@@ -22,6 +24,6 @@ try {
 
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     echo $e;
-    // log telegram errors
+    Log::warning($e);
     // echo $e->getMessage();
 }
